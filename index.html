@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oluebube - Task 1</title>
+</head>
+
+<style>
+    body{
+        background-color: aliceblue;
+    }
+
+    div{
+        width: 70%;
+        margin: auto;
+    }
+
+    img{
+        width: 304px;
+        height: 366px;
+        border-radius: 50%;
+    }
+</style>
+<body>
+
+    <div>
+        <h2 data-testid="slackUserName">Oluebube Emerem</h2>
+        <img src="profilePicture.jpg" alt="Oluebube Emerem" data-testid="slackDisplayImage">
+        <h4 data-testid="currentDayOfTheWeek" id="currentDayOfTheWeek">Current day of the week: </h4>
+        <h4 data-testid="currentUTCTime" id="currentUTCTime">Current UTC time: </h4>
+        <h4 data-testid="myTrack">My Track: Frontend</h4>
+        <a href="https://github.com/Ebube2701/Ebube2701.github.io" data-testid="githubURL">My Github URL</a>
+    </div>
+    
+</body>
+<script>
+
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
+    days.forEach((day,index)=>{
+        // Check if the index of day value is equal to the returned value of getDay()
+        if(index == new Date().getDay()){
+            document.getElementById("currentDayOfTheWeek").innerHTML += day;}   
+        }
+    )
+
+    const date = new Date();
+    const utcStr = date.toUTCString();
+    document.getElementById("currentUTCTime").innerHTML += utcStr;
+
+</script>
+</html>
